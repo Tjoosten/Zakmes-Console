@@ -3,6 +3,7 @@
 namespace Zakmes\Console;
 
 use Illuminate\Support\ServiceProvider;
+use Zakmes\Console\Console\Commands\MakeContractCommand;
 
 class ConsoleServiceProvider extends ServiceProvider
 {
@@ -10,10 +11,7 @@ class ConsoleServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([__DIR__.'/../config/console.php' => config_path('console.php'),], 'config');
-
-            $this->commands([
-                //
-            ]);
+            $this->commands([MakeContractCommand::class]);
         }
     }
 
