@@ -1,0 +1,55 @@
+{
+    "name": "zakmes/console",
+    "description": "Extra artisan commands en stub templates voor de ontwikkeling in the zakmes/scouts-boilerplate",
+    "keywords": [
+        "zakmes",
+        "console"
+    ],
+    "homepage": "https://github.com/zakmes/console",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tim Joosten",
+            "email": "Topairy@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.4",
+        "illuminate/console": "^8.4"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zakmes\\Console\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zakmes\\Console\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zakmes\\Console\\ConsoleServiceProvider"
+            ],
+            "aliases": {
+                "Console": "Zakmes\\Console\\ConsoleFacade"
+            }
+        }
+    }
+}
